@@ -9,7 +9,7 @@
     This is an Web Server created in my spare time in order to offer an interface between the user
     and the S3 object storage.
     I hope that this will serve as an example for future developers trying to create any aplication
-    that uses object storage for both private and hybrid cloud services :smiley:
+    that uses object storage for both private and hybrid cloud services
 
 ## Prerequisites
     In order to make this work, you need an S3 gateway object storage server running to connect to.
