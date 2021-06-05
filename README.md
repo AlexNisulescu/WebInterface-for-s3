@@ -1,5 +1,11 @@
 # :computer: Web Server using Flask and boto3 for S3 object storage
 
+<a href="https://www.python.org/"><img src="https://img.shields.io/badge/language-Python-brightgreen"></a>
+<a href="https://flask.palletsprojects.com/en/2.0.x/"><img src="https://img.shields.io/badge/Server-Flask-blue"></a>
+<a href="https://boto3.amazonaws.com/v1/documentation/api/latest/index.html"><img src="https://img.shields.io/badge/AWS SDK-Boto3-yellow"></a>
+<a href="#"><img src="https://img.shields.io/badge/Markup-HTML-orange"></a>
+<a href="#"><img src="https://img.shields.io/badge/Style-CSS-blue"></a>
+
 ## Table of contents
  - [Introduction](#Introduction)
  - [Prerequisites](#Prerequisites)
