@@ -1,0 +1,178 @@
+.column{
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.bucket{
+    background-color: #628395;
+    left: 0;
+    width: 25%;
+    display: inline-block;
+    text-align: center;
+}
+
+.object{
+    background-color: #F4FAFF;
+    right: 0;
+    width: 75%;
+    overflow: hidden
+}
+
+
+input:hover::-webkit-input-placeholder {
+    color: #1B2845;
+    opacity: 0.5; 
+}
+
+.bucketbtn{
+    background-color: #628395;
+    text-decoration: none;
+    border: none;
+    top: -10px;
+    float: left;
+    font-size: large;
+}
+
+.bucketbtn:hover{
+    color: #F4FAFF;
+}
+
+.deleteBucketbtn{
+    position: relative;
+    text-decoration: none;
+    border: none;
+    float: right;
+    background: url('../img/trash-solid.svg') no-repeat;
+    background-size:cover;
+    width: 28px;
+    height: 28px;
+}
+
+.deleteBucketbtn:hover{
+    background: url('../img/trash-hover.svg') no-repeat;
+    background-size:cover;
+}
+
+.searchtextbox{
+    visibility: hidden;
+}
+
+.newbucketdiv{
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.newBucketBtn{
+    background-color: #1B2845;
+    text-decoration: none;
+    color: #F4FAFF;
+    border: none;
+    width: 100px;
+    height: 30px;
+}
+
+.newBucketBtn:hover{
+    background-color: #F4FAFF;
+    color: #1B2845;
+}
+
+input[type=text] {
+    background-color: #628395;
+    color: #F4FAFF;
+    border: none;
+    border-bottom: 2px solid #F4FAFF;
+    padding: 6px;
+    font-size: 17px;
+    transition: width 0.4s ease-in-out;
+}
+
+input::-webkit-input-placeholder {
+    color: #F4FAFF;
+    opacity: 0.5; 
+}
+
+input[type=text]:hover {
+    border: none;
+    border-bottom: 2px solid #1B2845;
+    outline: none;
+}
+
+.objects{
+    position: absolute;
+    left: 5px;
+    top:50px;
+    width: 98%;
+    max-height: 450px;
+    overflow-y: scroll
+}
+
+.objects::-webkit-scrollbar {
+    display: none;
+}
+
+.downloadobjectbtn{
+    text-decoration: none;
+    border: none;
+    float: right;
+    background: url('../img/download-solid.svg') no-repeat;
+    background-size:cover;
+    background-position: 50%, 50%;
+    width: 28px;
+    height: 35px;
+    margin-left: auto;
+    margin-top: 8px;
+    margin-right: 10px;
+}
+
+.downloadobjectbtn:hover{
+    background: url('../img/download-hover.svg') no-repeat;
+    background-size:cover;
+}
+
+.deleteobjectbtn{
+    text-decoration: none;
+    border: none;
+    float: right;
+    background: url('../img/trash-solid.svg') no-repeat;
+    background-size:cover;
+    background-position: 50%, 50%;
+    width: 28px;
+    height: 28px;
+    margin-top: 8px;
+    margin-right: 5px;
+}
+
+.deleteobjectbtn:hover{
+    background: url('../img/trash-hover.svg') no-repeat;
+    background-size:cover;
+}
+
+.obj{
+    display: flex;
+} 
+
+input[type=file]{
+    display: none;
+}
+
+.custom-file-upload{
+    position: absolute;
+    border: none;
+    bottom: 50px;
+    right: 35px;
+    background: url('../img/add-solid.svg') no-repeat;
+    background-size:cover;
+    width: 60px;
+    height: 60px;
+}
+
+.custom-file-upload:hover{
+    background: url('../img/add-hover.svg') no-repeat;
+    background-size:cover;
+}
