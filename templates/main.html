@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>S3 WEB INTERFACE</title>
+        <link rel="stylesheet" href="{{ url_for('static',filename='styles/style.css') }}">>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    <body>
+        {% if badDelete%}
+        <script>
+            alert("Bucket must be empty in order to delete it!")
+        </script>
+        {% endif %}
+    <div class="content">
+        <section class="page-main">
+            <div class="bucket column">
+                <input type="text" placeholder="Search.." class="searchtextbox">
+                    {% for item in buckets %}
+                    <form action="/listobjects/" method="post">
+                    <h3><button type="submit" class="bucketbtn">{{ item.Name }}</button></h3>
+                    <input type="hidden" name="bucketname" value="{{ item.Name }}">
+                    </form>
+                    <form action="/delete/" method="post">
+                        <button name="deleteBucketbtn" type="submit" class="deleteBucketbtn"></button>
+                        <input type="hidden" name="bucketname" value="{{ item.Name }}">
+                    </form>
+                    <br>
+                    {% endfor %}
+                    <div class="newbucketdiv">
+                        <form action="/newbucket/" method="post">
+                            <input type="text" name="bkname" placeholder="Bucket Name..">
+                            <br>
+                            <br>
+                            <button name="newBucketBtn" type="submit" class="newBucketBtn">Create New Bucket</button>
+                        </form>
+                    </div>    
+            </div>
+            <div class="object column">
+                <div class="objects">
+                    <h1 style="text-align:center; color: #1B2845;">{{ bucketname }}</h1>
+                    {% for item in objects %}
+                    <div class="obj">
+                        <h3>{{ item.Key }}</h3>
+                        <button name="downloadobjectbtn" type="submit" class="downloadobjectbtn" style="visibility: hidden;"> </button>
+                        <form action="/downloadobject/" method="post" class="downloadform">
+                        <input type="hidden" name="objectname" value="{{ item.Key }}">
+                        <input type="hidden" name="bucketname" value="{{ bucketname }}">
+                        <button name="downloadobjectbtn" type="submit" class="downloadobjectbtn"> </button>
+                        </form>
+                        <form action="/deleteobject/" method="post" class="deleteform">
+                        <input type="hidden" name="objectname" value="{{ item.Key }}">
+                        <input type="hidden" name="bucketname" value="{{ bucketname }}">
+                        <button name="deleteobjectbtn" type="submit" class="deleteobjectbtn"> </button>
+                        </form>
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">
+                    $(document).ready(function(){
+                        $("form").on('submit',function(){
+                            alert("It works");
+                        });
+                    });
+                </script>
+                <form action="/uploadobject/" method="POST" enctype = "multipart/form-data">
+                    <input type="hidden" name="bucketname" value="{{ bucketname }}">
+                    <label class="custom-file-upload">
+                        <input type="file" id="userfile" name="userfile" class="addobjectbtn" onchange="$('form').submit();">
+                    </label>
+                </form>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
