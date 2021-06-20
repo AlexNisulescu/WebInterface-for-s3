@@ -25,3 +25,6 @@
 
  ## Application usage
     This app can be used to create your own cloud storage even if it's public, private or hybrid. 
+    In order to start the server you need to remove the comment ("#") at line 124 if you plan to
+    start the server as HTTP or lines 127 and 128 if you want to start it as HTTPS. For the last
+    option you will also need a valid certificate and key.
