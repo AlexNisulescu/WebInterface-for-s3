@@ -120,4 +120,7 @@ def home():
         buckets=buckets['Buckets'])
 
 if __name__ == '__main__':
-   app.run()
+   # app.run() ## This is used to start an HTTP server
+   
+   # context = ('server.crt', 'server.key')
+   # app.run(debug=True, ssl_context=context) ## This is used to start an HTTPS server
