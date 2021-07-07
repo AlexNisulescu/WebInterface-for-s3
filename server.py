@@ -20,13 +20,14 @@ def create_new_bucket():
    name = request.form['bkname']
    buckets = getBuckets()
    buckets = buckets['Buckets']
-   print(buckets)
+   button = "true"
    s3.create_bucket(Bucket=name)
    buckets = getBuckets()
    return render_template(
         'main.html',
         buckets=buckets['Buckets'],
-        bucketname=name)
+        bucketname=name,
+        showbtn=button)
 
 @app.route("/delete/", methods=['POST'])
 def delete_bucket():
@@ -50,12 +51,14 @@ def list_objects():
    name = request.form['bucketname']
    response = s3.list_objects_v2(Bucket=name)
    buckets = getBuckets()
+   button = "true"
    if response['KeyCount'] != 0:
       return render_template(
         'main.html',
         buckets=buckets['Buckets'], 
         objects=response['Contents'], 
-        bucketname=name)
+        bucketname=name, 
+        showbtn=button)
    else:
       return render_template(
       'main.html',
@@ -124,5 +127,5 @@ if __name__ == '__main__':
    # app.run()
 
    ## This is used to start an HTTPS server
-   # context = ('server.crt', 'server.key')
-   # app.run(debug=True, ssl_context=context) 
+   #context = ('mywebsite.com.crt', 'mywebsite.com.key')
+   #app.run(debug=True, ssl_context=context) 

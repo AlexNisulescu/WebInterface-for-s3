@@ -64,12 +64,14 @@
                         });
                     });
                 </script>
+                {% for item in showbtn %}
                 <form action="/uploadobject/" method="POST" enctype = "multipart/form-data">
                     <input type="hidden" name="bucketname" value="{{ bucketname }}">
                     <label class="custom-file-upload">
                         <input type="file" id="userfile" name="userfile" class="addobjectbtn" onchange="$('form').submit();">
                     </label>
                 </form>
+                {% endfor %}
             </div>
         </section>
     </div>
