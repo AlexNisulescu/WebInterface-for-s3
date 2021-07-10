@@ -28,3 +28,5 @@
     In order to start the server you need to remove the comment ("#") at line 124 if you plan to
     start the server as HTTP or lines 127 and 128 if you want to start it as HTTPS. For the last
     option you will also need a valid certificate and key.
+    Another thing to keep in mind is to change the values of endpoint_url, aws_access_key_id and
+    aws_secret_access_key located at lines 8, 9 and 10 with the ones coresponding for your server.
